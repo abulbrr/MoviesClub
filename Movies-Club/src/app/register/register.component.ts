@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
   }
   onRegister() {
     this.authService.register(this.email, this.password);
-    console.log("on Register");
+    this.route.navigate(['/login']);
     
 
   }

@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
-
   constructor(private router: Router){}
 
   register(email: string, password: string)
@@ -23,11 +22,13 @@ export class AuthService {
   {
     firebase.auth().signInWithEmailAndPassword( email, password )
     .then(
-        response => console.log(response)
+      response => { sessionStorage.setItem("currentUser", response.user["email"]);
+                    this.router.navigate(["/home"]);
+      }
     )
     .catch(
-        error => console.log(error)
-    )
+        error => alert("Wrong credentials!")
+    );
   }
 
 }
