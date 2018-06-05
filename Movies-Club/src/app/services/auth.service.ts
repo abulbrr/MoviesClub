@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
 
-  constructor() { }
+  constructor(private router: Router){}
 
   register(email: string, password: string)
   {
@@ -16,7 +17,6 @@ export class AuthService {
     .then ( 
       response => console.log(response)
     );
-
   }
 
   login(email: string, password:string )
