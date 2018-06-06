@@ -14,7 +14,7 @@ import * as firesbase from 'firebase';
 import { AuthService } from './services/auth.service';
 import { RegisterComponent } from './register/register.component';
 import { HttpModule } from '@angular/http';
-import { GuardComponent } from './guard/guard.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,6 @@ import { GuardComponent } from './guard/guard.component';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    GuardComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +31,7 @@ import { GuardComponent } from './guard/guard.component';
     AppRoutingModule,
     HttpModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
