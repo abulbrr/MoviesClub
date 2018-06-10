@@ -1,3 +1,28 @@
-<p>
-  movie works!
-</p>
+<form #movieForm="ngForm" (ngSubmit)="onSubmit(movieForm)">
+  <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="moviesService.selectedMovie.$key">
+<div class="form-group">
+  <label>Name</label>
+  <input class="form-control" name="name" #name="ngModel" [(ngModel)]="moviesService.selectedMovie.name" placeholder="Full Name" required>
+</div>
+<div class="form-group">
+  <label>Description</label>
+  <input class="form-control" name="description" #description="ngModel" [(ngModel)]="moviesService.selectedMovie.description" placeholder="description">
+</div>
+<div class="form-group">
+  <label>Rating</label>
+  <div class="input-group">
+      <div class="input-group-addon">
+        <i class="fa fa-star"></i>
+      </div>
+      <input class="form-control" name="rating" #rating="ngModel" [(ngModel)]="moviesService.selectedMovie.rating" placeholder="rating">
+  </div>
+</div>
+<div class="form-group">
+  <button class="btn btn-default" type="submit" [disabled]="!movieForm.valid">
+    <i class="fa fa-floppy-o"></i>
+     Submit</button>
+  <button class="btn btn-default" type="button" (click)="resetForm(movieForm)">
+    <i class="fa fa-repeat"></i>
+     Reset</button>
+</div>
+</form>

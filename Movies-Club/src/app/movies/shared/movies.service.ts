@@ -3,13 +3,13 @@ import { Movie } from './movie.model';
 import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
 
 @Injectable()
-export class MoviesService {
+export class    MoviesService {
   moviesList: AngularFireList<any>;
   selectedMovie: Movie = new Movie();
 
   constructor(private firebase : AngularFireDatabase) { }
 
-  getDate() {
+  getData() {
     this.moviesList = this.firebase.list('movies');
     return this.moviesList;
   }

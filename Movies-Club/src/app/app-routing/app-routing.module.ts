@@ -6,15 +6,18 @@ import { CommonModule } from '@angular/common';
 import { NotFoundComponent } from '../not-found/not-found.component';
 import { HomeComponent } from '../home/home.component';
 import { LoginComponent } from '../login/login.component';
+import { Login2Component } from '../login2/login2.component';
 import { RegisterComponent } from '../register/register.component';
 import { AuthGuard } from '../auth.guard';
+import { MoviesComponent } from '../movies/movies.component';
 
 
 const routes: Routes =
 [
-{ path: '', redirectTo: '/home', pathMatch: 'full'},
-{ path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-{ path: 'login', component: LoginComponent },
+{ path: '', redirectTo: '/movies', pathMatch: 'full'},
+{ path: 'home', component: HomeComponent},
+{ path: 'movies', component: MoviesComponent , canActivate: [AuthGuard] },
+{ path: 'login2', component: Login2Component },
 { path: 'register', component: RegisterComponent },
 { path: '**', component: NotFoundComponent, canActivate: [AuthGuard] }
 ];
