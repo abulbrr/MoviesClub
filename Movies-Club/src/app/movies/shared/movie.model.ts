@@ -3,5 +3,6 @@ export class Movie {
     name: string;
     rating: number;
     description: string;
+    imageLink: string;
 }
  

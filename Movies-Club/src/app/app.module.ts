@@ -25,7 +25,6 @@ import { MoviesService } from './movies/shared/movies.service';
 import { AuthService } from './services/auth.service';
 import { Login2Component } from './login2/login2.component';
 
-
 export const firebaseConfig = {
   apiKey: "AIzaSyBD3jDFnpsaQC5oWVJOUXYZsl72KxZtWzU",
   authDomain: "moviesclub-f71c8.firebaseapp.com",
@@ -56,7 +55,7 @@ firebase.initializeApp(firebaseConfig);
     AngularFireAuthModule,
     FormsModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
   ],
   providers: [AuthService, AuthGuard, MoviesService ],
   bootstrap: [AppComponent]

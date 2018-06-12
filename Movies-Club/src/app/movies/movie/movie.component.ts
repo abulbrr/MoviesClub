@@ -11,7 +11,7 @@ import { Movie } from '../shared/movie.model';
 })
 export class MovieComponent implements OnInit {
 
-  constructor(private moviesService : MoviesService ) { }
+  constructor(public moviesService : MoviesService ) { }
 
   ngOnInit() {
     this.resetForm();
@@ -20,7 +20,7 @@ export class MovieComponent implements OnInit {
   onSubmit(employeeForm: NgForm) {
     if (employeeForm.value.$key == null) {
       this.moviesService.insertMovie(employeeForm.value);
-      console.log("?????????????" + employeeForm.value);
+      console.log(employeeForm.value);
     }
     else {
       this.moviesService.updateMovie(employeeForm.value);
@@ -36,7 +36,8 @@ export class MovieComponent implements OnInit {
         $key: null,
         name: '',
         rating: 0,
-        description: ''
+        description: '',
+        imageLink : ''
       }
   
   }

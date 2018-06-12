@@ -1,18 +1,22 @@
 
 <h6 class="text-center">Movies Register</h6><br/>
-<table class="table table-sm table-hover">
-  <tr *ngFor="let movie of moviesList">
-      <td>{{movie.$key}}</td>
-      <td>{{movie.name}}</td>
-      <td>{{movie.rating}}</td>
-      <td>{{movie.description}}</td>
-      <td>
-        <a class="btn" (click)="onEdit(movie)">
-          <i class="fa fa-pencil-square-o"></i>
-        </a>
-        <a class="btn" (click)="onDelete(movie.$key)">
-          <i class="fa fa-trash-o"></i>
-        </a>
-      </td>
-  </tr>
-</table>
+<div class="row"> 
+  <div *ngFor="let movie of moviesList" >
+    <div class="col-md-4">
+      <div class="polaroid">           
+          <h3>{{movie.name}}</h3>
+          <p>{{movie.description}}</p>
+          <img class="img-responsive" src="{{movie.imageLink}}" alt="" />    
+          <br>      
+          <br>
+          <p>rating: {{movie.rating}}</p>
+          <a class="btn" (click)="onEdit(movie)">
+            <i class="fa fa-pencil-square-o"></i>
+          </a>
+          <a class="btn" (click)="onDelete(movie.$key)">
+            <i class="fa fa-trash-o"></i>
+            </a>
+      </div>
+    </div>        
+  </div>
+</div>

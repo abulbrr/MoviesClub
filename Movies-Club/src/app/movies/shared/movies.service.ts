@@ -18,7 +18,8 @@ export class    MoviesService {
      this.moviesList.push({
       name: movie.name,
       rating: movie.rating,
-      description: movie.description
+      description: movie.description,
+      imageLink : movie.imageLink
      });
   }
 
@@ -27,7 +28,8 @@ export class    MoviesService {
       {
       name: movie.name,
       rating: movie.rating,
-      description: movie.description
+      description: movie.description,
+      imageLink: movie.imageLink
       }
     );
   }
