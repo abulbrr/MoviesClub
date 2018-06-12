@@ -35,7 +35,7 @@ export class AuthService {
         }
     )
     .catch(
-        error => alert(error)
+        error => alert("Wrong username of password, do you have an account ?")
     );
 }
 

@@ -17,7 +17,7 @@ const routes: Routes =
 { path: '', redirectTo: '/movies', pathMatch: 'full'},
 { path: 'home', component: HomeComponent},
 { path: 'movies', component: MoviesComponent , canActivate: [AuthGuard] },
-{ path: 'login2', component: Login2Component },
+{ path: 'login', component: Login2Component },
 { path: 'register', component: RegisterComponent },
 { path: '**', component: NotFoundComponent, canActivate: [AuthGuard] }
 ];
